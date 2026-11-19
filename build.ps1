@@ -41,7 +41,13 @@ Get-ChildItem $repo -Directory -Filter "Clase*" |
 
         $pdf = [System.IO.Path]::ChangeExtension($markdown.FullName, ".pdf")
         Write-Host "Renderizando $($markdown.Name)..." -ForegroundColor Cyan
-        & $marp $markdown.FullName --pdf --allow-local-files --pdf-outlines --no-stdin -o $pdf
+        Push-Location $tools
+        try {
+            & $marp $markdown.FullName --pdf --allow-local-files --pdf-outlines --no-stdin -o $pdf
+        }
+        finally {
+            Pop-Location
+        }
         if ($LASTEXITCODE -ne 0) {
             throw "Marp falló al renderizar $($markdown.FullName)"
         }
