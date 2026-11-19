@@ -30,14 +30,15 @@ if ($chrome) {
     $env:CHROME_PATH = $chrome
 }
 
-Get-ChildItem $repo -Directory -Filter "Clase*" |
-    Sort-Object Name |
+Get-ChildItem $repo -Recurse -Filter "*.md" |
+    Where-Object {
+        $_.Name -ne "README.md" -and
+        $_.FullName -notmatch "\\assets\\" -and
+        $_.Name -notlike "_parte*"
+    } |
+    Sort-Object FullName |
     ForEach-Object {
-        $classDir = $_.FullName
-        $markdown = Get-ChildItem $classDir -Filter "*.md" | Select-Object -First 1
-        if (-not $markdown) {
-            return
-        }
+        $markdown = $_
 
         $pdf = [System.IO.Path]::ChangeExtension($markdown.FullName, ".pdf")
         Write-Host "Renderizando $($markdown.Name)..." -ForegroundColor Cyan

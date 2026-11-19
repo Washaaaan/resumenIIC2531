@@ -1,6 +1,6 @@
-# IIC2531 — Resúmenes de clases (2026-2)
+# IIC2531 — Material de estudio (2026-2)
 
-Presentaciones en PDF con los contenidos principales de las clases 08 a 22 del curso **IIC2531: Seguridad de Sistemas Computacionales**.
+Presentaciones en PDF con resúmenes de clases, un banco de preguntas para la Interrogación 2 y explicaciones de los laboratorios del curso **IIC2531: Seguridad de Sistemas Computacionales**.
 
 Cada deck fue resumido a partir del material original de la clase, conservando su estilo Marp (tema, fondo y reglas CSS) y agregando:
 
@@ -33,6 +33,24 @@ Cada deck fue resumido a partir del material original de la clase, conservando s
 
 Cada carpeta `ClaseXX/` contiene el `.md` fuente del resumen y el `.pdf` generado. Las imágenes y diagramas usados están en `assets/`.
 
+## Interrogación 2
+
+| Recurso | Contenido | PDF |
+|---|---|---|
+| Banco de preguntas | 45 escenarios con 3 subpreguntas y respuesta, más 15 preguntas rápidas | [banco-preguntas-interrogacion2.pdf](Interrogacion2/banco-preguntas-interrogacion2.pdf) |
+
+El banco sigue el formato de la Interrogación 2: escenario concreto, adversario, decisiones de diseño y trade-offs. Incluye los 9 temas del certamen, con énfasis especial en la pregunta obligatoria de Buffer Overflow.
+
+## Laboratorios
+
+| Lab | Tema | PDF |
+|---|---|---|
+| 03 | Buffer overflow en `zookws`: shellcode, bypass de NX y parche | [03-buffer-overflow.pdf](Laboratorios/Lab03/03-buffer-overflow.pdf) |
+| 04 | Browser security: XSS, phishing y gusano de perfiles | [04-browser-security.pdf](Laboratorios/Lab04/04-browser-security.pdf) |
+| 05 | Seguridad en sistemas de IA: OpenClaw y Andes Health Analytics | [05-openclaw-security.pdf](Laboratorios/Lab05/05-openclaw-security.pdf) |
+
+El Lab 03 refleja la solución real entregada (`lab1-handin.tar.gz`), incluidos los offsets, exploits y problemas encontrados. Los Lab 04 y 05 son **soluciones de referencia** construidas a partir de los enunciados, porque no había una entrega local disponible; están rotuladas como tales en la portada.
+
 ## Estructura
 
 ```text
@@ -49,7 +67,14 @@ Cada carpeta `ClaseXX/` contiene el `.md` fuente del resumen y el `.pdf` generad
 │   └── 08-buffer-overflow.pdf
 ├── Clase09/
 │   └── ...
-└── Clase22/
+├── Clase22/
+├── Interrogacion2/
+│   ├── banco-preguntas-interrogacion2.md
+│   └── banco-preguntas-interrogacion2.pdf
+└── Laboratorios/
+    ├── Lab03/
+    ├── Lab04/
+    └── Lab05/
 ```
 
 ## Regenerar los PDF
