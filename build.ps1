@@ -55,3 +55,4 @@ Get-ChildItem $repo -Recurse -Filter "*.md" |
     }
 
 Write-Host "Listo: PDFs regenerados en $repo" -ForegroundColor Green
+exit 0
